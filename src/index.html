@@ -21,6 +21,10 @@
   </script>
   <script type="text/javascript">
   	$(document).ready(function(){
+
+      $('#test').click(function(){
+        alert($('#mytbl').jsRichGridGetData());
+      });
   		$('#mytbl').jsRichGrid(
         {
           'tableType':["textBox","dropDown","dropDown"],
@@ -36,7 +40,7 @@
 
 <body>
   <script src="js/scripts.js"></script>
-  
+  <input type="button" name="" id="test" value="dsfdsf">
   <table border="1" cellspacing="0" cellpadding="0" id="mytbl" width="75%">
 	<thead>
 	   <tr>

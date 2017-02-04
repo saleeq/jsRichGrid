@@ -1,6 +1,10 @@
 (function($){
+	var data_array = [];
+	$.fn.jsRichGridGetData = function(){		
+		return JSON.stringify(data_array);
+	}
 	$.fn.jsRichGrid = function(options){
-		var data_array = [];
+		
 		return this.each(function() {			
 			var thisTable = $(this);
 			var row_count = thisTable.find('tbody tr').length;
@@ -101,6 +105,7 @@
 				}
 				element_to_append+='<td class="richAction"><span class="richRowDelete">Delete</span></td></tr>';
 				thisTable.append(element_to_append);
+				//console.log(data_array);
 			});
         
     	});
