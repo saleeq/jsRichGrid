@@ -4,18 +4,53 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>jsRichGrid demo</title>
+  <meta name="description" content="jsRichGrid demo">
+  <meta name="author" content="Saleeq Mohammed">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+  
+  
+  <script type="text/javascript" src="js/jquery-3.1.1.min.js" >
+  </script>
+  <script type="text/javascript" src="js/jsRichGrid.js">
+  </script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+  		$('#mytbl').jsRichGrid(
+        {
+          'tableType':["textBox","dropDown","dropDown"],
+          'tableTdClass':[".txt",".drp",".lbl"],
+          'dropdownSource':[{'key':'.drp','source':[{'display':"Item 1",'value':"1"},{'display':"Item 2",'value':"2"},{'display':"Item 3",'value':"3"}]},{'key':'.lbl','source':[{'display':"Item 1",'value':"1"},{'display':"Item 2",'value':"2"},{'display':"Item 3",'value':"3"}]}]
+        }
+
+      );
+
+  	});
+  </script>
 </head>
 
 <body>
   <script src="js/scripts.js"></script>
+  
+  <table border="1" cellspacing="0" cellpadding="0" id="mytbl" width="75%">
+	<thead>
+	   <tr>
+      <th width="20%">Sl</th>
+      <th>Age</th>
+      <th>Country</th> 
+      <th><span class="rbtn-add-row">Add</th>
+     </tr> 	
+	</thead>
+	<tbody>
+		 
+	</tbody>
+  	
+  	
+  </table>
 </body>
 </html>
