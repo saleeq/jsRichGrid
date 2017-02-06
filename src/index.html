@@ -1,53 +1,73 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>jsRichGrid demo</title>
-  <meta name="description" content="jsRichGrid demo">
-  <meta name="author" content="Saleeq Mohammed">
+    <title>jsRichGrid demo</title>
+    <meta name="description" content="jsRichGrid demo">
+    <meta name="author" content="Saleeq Mohammed">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
-  
-  
-  <script type="text/javascript" src="js/jquery-3.1.1.min.js" >
-  </script>
-  <script type="text/javascript" src="js/jsRichGrid.js">
-  </script>
-  <script type="text/javascript">
-  	$(document).ready(function(){
 
-      $('#test').click(function(){
-        alert($('#mytbl').jsRichGridGetData());
-      });
-  		$('#mytbl').jsRichGrid(
-        {
-          'tableType':["textBox","dropDown","dropDown"],
-          'tableTdClass':[".txt",".drp",".lbl"],
-          'dropdownSource':[{'key':'.drp','source':[{'display':"Item 1",'value':"1"},{'display':"Item 2",'value':"2"},{'display':"Item 3",'value':"3"}]},{'key':'.lbl','source':[{'display':"Item 1",'value':"1"},{'display':"Item 2",'value':"2"},{'display':"Item 3",'value':"3"}]}]
-        }
 
-      );
-
-  	});
-  </script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js">
+    </script>
+    <script type="text/javascript" src="js/jsRichGrid.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#test').click(function() {
+                alert($('#mytbl').jsRichGridGetData());
+            });
+            $('#mytbl').jsRichGrid({
+                'tableType': ["textBox", "dropDown", "dropDown"],
+                'tableTdClass': [".txt", ".drp", ".lbl"],
+                'dropdownSource': [{
+                    'key': '.drp',
+                    'source': [{
+                        'display': "Item 1",
+                        'value': "1"
+                    }, {
+                        'display': "Item 2",
+                        'value': "2"
+                    }, {
+                        'display': "Item 3",
+                        'value': "3"
+                    }]
+                }, {
+                    'key': '.lbl',
+                    'source': [{
+                        'display': "Item 1",
+                        'value': "1"
+                    }, {
+                        'display': "Item 2",
+                        'value': "2"
+                    }, {
+                        'display': "Item 3",
+                        'value': "3"
+                    }]
+                }]
+            });
+        });
+    </script>
 </head>
 
 <body>
-  <script src="js/scripts.js"></script>
-  <input type="button" name="" id="test" value="dsfdsf">
-  <table border="1" cellspacing="0" cellpadding="0" id="mytbl" width="75%">
-	<thead>
-	   <tr>
-      <th width="20%">Sl</th>
-      <th>Age</th>
-      <th>Country</th> 
-      <th><span class="rbtn-add-row">Add</th>
+    <script src="js/scripts.js"></script>
+    <input type="button" name="" id="test" value="dsfdsf">
+    <table border="1" cellspacing="0" cellpadding="0" id="mytbl" width="75%">
+        <thead>
+            <tr>
+                <th width="20%">Sl</th>
+                <th>Age</th>
+                <th>Country</th>
+                <th><span class="rbtn-add-row">Add</th>
      </tr> 	
 	</thead>
 	<tbody>
