@@ -108,3 +108,8 @@ $(document).ready(function () {
   * **source**
         specifies the data to be displayed in the drop down.
   
+ ### Geting data from the jsRichGrid
+ Simple do this
+ ```javascript
+ $('#mytbl').jsRichGridGetData()
+ ```
