@@ -15,7 +15,7 @@
       data_array.push([]);
       for (col_index = 0; col_index < tableTdClass.length; col_index++) {
         var row_td = row_tr.children[col_index];
-        data_array[row_index][col_index] = $(row_tr.children[col_index]).html();
+        data_array[row_index][col_index] = $(row_tr.children[col_index]).attr("select-val");
       }
     }
     for (iCount = 0; iCount < tableStructure.length; iCount++) {
