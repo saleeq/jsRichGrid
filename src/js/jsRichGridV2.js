@@ -10,6 +10,8 @@
     var dropdownSource = options.dropdownSource;
     var bindParant = options.parantDiv;
     var addBtn = options.addBtn;
+    var topV = options.top;
+    var leftV = options.left;
     for (row_index = 0; row_index < row_count; row_index++) {
       var row_tr = thisTable.find('tbody tr') [row_index];
       data_array.push([]);
@@ -48,11 +50,19 @@
       }
       var current_td;
       $('.'+bindParant).on('click', tableTdClass[iCount], function () {
+        var ttop = 10;
+        var tleft = 10;
+        if(topV!=''){
+          ttop = topV;
+        }
+        if(leftV!=''){
+          tleft = leftV;
+        }
         $('.div' + $(this).attr('class')).css({
           width: $(this).width(),
           height: $(this).height(),
-          left: $(this).position().left + 10,
-          top: $(this).position().top + 10
+          left: $(this).position().left + tleft,
+          top: $(this).position().top + ttop
         });
         current_td = $(this);
         $('.' + $('.div' + current_td.attr('class')).attr('child')).val(current_td.attr('select-val'));
@@ -93,12 +103,18 @@
       $(this).parent().parent().remove();
     });
     $('.'+bindParant).on("getData",function(event, informationObj){
+      for(i=0;i<data_array.length;i++){
+        var row_tr = thisTable.find('tbody tr')[i];
+        data_array[i][row_tr.children.length - 1] = $(row_tr).attr('row_id');
+      }
       informationObj.JSONDATA = JSON.stringify(data_array);
+      
+
     });
     $('.'+addBtn).click(function () {
-      var element_to_append = '<tr>';
+      var element_to_append = '<tr row_id="0">';
       for (i = 0; i < tableTdClass.length; i++) {
-        element_to_append += '<td class="' + tableTdClass[i].substr(1) + '" select-val="unset">unset</td>';
+        element_to_append += '<td class="' + tableTdClass[i].substr(1) + '" select-val=""></td>';
       }
       element_to_append += '<td class="richAction"><span class="richRowDelete">Delete</span></td></tr>';
       thisTable.append(element_to_append);
